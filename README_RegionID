@@ -1,11 +1,9 @@
-# RegionSeeker
-
 Overview
-
-    The RegionSeeker© framework is a plugin of latest LLVM version (3.8) and consists  mainly of
-    3 LLVM Analysis Passes: Region Identification Pass, Basic Block Identification Pass and Functions 
-    Identification Pass. In addition to those a Basic Block Frequency Annotation Pass is used. The 
-    final goal is to  Identify the most efficient Regions that are going to be implemented into Hardware.
+    
+    The Region Identification framework is a plugin of latest LLVM version (3.8) and consists 
+    mainly of 2 LLVM Analysis Passes: Region Identification Pass and Basic Block Frequency 
+    Annotation Pass. The final goal is to Identify the most efficient Regions that are going
+    to be implemented into Hardware.
 
     The process is as follows:
 
@@ -48,11 +46,21 @@ Overview
 
     c) Region Selection
 
-       Region Selection is performed by using two algorithsms.
 
-       1) Exact
+        The Region Identification apart from the Analysis, computes also the values of two metrics, based on which
+        the final sorting of the Regions takes place.
 
-       2) Greedy 
+        These two metrics are: Goodness and Density.
+
+        Goodness = SUM[ Good DFG Nodes of BB1 * FreqBB1) +...+ (Good DFG Nodes of BBN * FreqBBN) ] , 
+            within Region R, R: { BB1 U BB2 ... U BBN }
+
+        Density = Goodness / Total DFG Nodes in the Region
+
+        Good DFG Nodes: Computation Instructions e.g. ADD, SUB, OR, AND, XOR, Select etc
+        Bad  DFG Nodes: e.g. Load, Store, Br, Call, etc
+
+        So based on Density of a Region we sort them out and select the most efficient for our implementation.
  
  
  Makefiles
@@ -62,7 +70,7 @@ Overview
 
     The Makefile_region is included in the Makefile_orig of every benchmark.
     Makefile_orig is simply a copy of the original Makefile, wich has been slightly modified
-    to use the Makefile_region. (to include the Makefile_Region) 
+    to use the Makefile_region.
 
 
     
@@ -156,6 +164,3 @@ Usage
     
     Georgios Zacharopoulos <georgios.zacharopoulos@usi.ch>
     Date: February, 2016
-    
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help

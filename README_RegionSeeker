@@ -1,5 +1,3 @@
-# RegionSeeker
-
 Overview
 
     The RegionSeeker© framework is a plugin of latest LLVM version (3.8) and consists  mainly of
@@ -156,6 +154,3 @@ Usage
     
     Georgios Zacharopoulos <georgios.zacharopoulos@usi.ch>
     Date: February, 2016
-    
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
