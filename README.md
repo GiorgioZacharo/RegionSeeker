@@ -151,11 +151,9 @@ Usage
 
    ** Modifications are needed to comply for every benchmark. **
 
-    
-    # Authors
-    
-    Georgios Zacharopoulos <georgios.zacharopoulos@usi.ch>
-    Date: February, 2016
-    
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
+
+
+# Authors
+
+Georgios Zacharopoulos <georgios.zacharopoulos@usi.ch>
+Date: January, 2020    
