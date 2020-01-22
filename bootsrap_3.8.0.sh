@@ -31,10 +31,10 @@ cmake $(pwd)/../llvm-3.8.0.src/
 cmake --build .
 #cmake --build . --target install # Option for root access - not necessary.
 
-# Copy the folder containing the BBFreqInfo pass to LLVM source tree.
+# Copy the folder containing the IdentifyRegions pass to LLVM source tree.
 cd ../..
-cp -r BBFreqInfo llvm-RS-3.8.0/llvm-3.8.0.src/lib/Transforms/.
-sed -i.bak 's/^\(PARALLEL_DIRS = .*\)/\1 BBFreqInfo/' llvm-RS-3.8.0/llvm-3.8.0.src/lib/Transforms/Makefile
-echo "add_subdirectory(BBFreqInfo)" >> llvm-RS-3.8.0/llvm-3.8.0.src/lib/Transforms/CMakeLists.txt 
+cp -r IdentifyRegions llvm-RS-3.8.0/llvm-3.8.0.src/lib/Transforms/.
+sed -i.bak 's/^\(PARALLEL_DIRS = .*\)/\1 IdentifyRegions/' llvm-RS-3.8.0/llvm-3.8.0.src/lib/Transforms/Makefile
+echo "add_subdirectory(IdentifyRegions)" >> llvm-RS-3.8.0/llvm-3.8.0.src/lib/Transforms/CMakeLists.txt 
 
 rm cfe-3.8.0.src.tar.xz  llvm-3.8.0.src.tar.xz
